@@ -1,27 +1,37 @@
-// dummy products data
-
-import { Product } from "../models/Product";
+import type { Product } from "../models/Product";
+import mouseImg from "../assets/mouse.png";
+import runningShoesImg from "../assets/running-shoes.png";
+import mugImg from "../assets/mug.png";
 
 export const products: Product[] = [
   {
     id: 1,
     name: "Wireless Mouse",
-    description: "Ergonomic wireless mouse with 2.4GHz connectivity",
+    shortDescription: "Ergonomic wireless mouse with 2.4GHz connectivity",
+    description:
+      "An ergonomic wireless mouse designed for comfort during long work sessions. Features 2.4GHz connectivity, adjustable DPI settings, and a battery life that lasts up to 12 months. Perfect for both office and gaming use.",
     price: 25.99,
-    category: "Electronics"
+    category: "Electronics",
+    image: mouseImg
   },
   {
     id: 2,
     name: "Running Shoes",
-    description: "Lightweight running shoes with breathable mesh",
+    shortDescription: "Lightweight running shoes with breathable mesh",
+    description:
+      "Lightweight running shoes with breathable mesh fabric and cushioned soles. Designed to provide maximum support and flexibility for daily jogs or marathon training. Available in multiple colors and sizes.",
     price: 59.99,
-    category: "Sportswear"
+    category: "Sportswear",
+    image: runningShoesImg
   },
   {
     id: 3,
     name: "Coffee Mug",
-    description: "Ceramic mug with 350ml capacity",
+    shortDescription: "Ceramic mug with 350ml capacity",
+    description:
+      "A durable ceramic mug with a 350ml capacity, ideal for coffee, tea, or hot chocolate. Dishwasher and microwave safe, with a sleek matte finish that adds style to your kitchenware collection.",
     price: 9.99,
-    category: "Kitchenware"
+    category: "Kitchenware",
+    image: mugImg
   }
 ];
