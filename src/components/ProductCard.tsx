@@ -1,4 +1,5 @@
 import type { Product } from "../models/Product";
+import "./components.css";
 
 interface ProductCardProps {
   product: Product;
@@ -6,25 +7,12 @@ interface ProductCardProps {
 
 export function ProductCard({ product }: ProductCardProps) {
   return (
-    <div
-      style={{
-        border: "1px solid #ccc",
-        borderRadius: "8px",
-        padding: "12px",
-        margin: "12px",
-        maxWidth: "250px",
-        cursor: "pointer"
-      }}
-    >
-      <img
-        src={product.image}
-        alt={product.name}
-        style={{ width: "100%", borderRadius: "4px" }}
-      />
+    <div className="product-card">
+      <img src={product.image} alt={product.name} />
       <h3>{product.name}</h3>
       <p>{product.shortDescription}</p>
       <strong>${product.price.toFixed(2)}</strong>
-      <p style={{ fontStyle: "italic" }}>{product.category}</p>
+      <p className="category">{product.category}</p>
     </div>
   );
 }
