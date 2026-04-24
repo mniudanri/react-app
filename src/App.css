@@ -252,15 +252,3 @@
   .sidebar { width: 60px; }
   .sidebar span { display: none; }
 }
-
-html, body, #root {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
-}
-
-#root {
-  height: 100%;
-  display: flex;
-}
