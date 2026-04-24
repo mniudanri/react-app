@@ -186,14 +186,14 @@
 .app-container {
   display: flex;
   height: 100vh;
+  width: 100%;
 }
 
 .sidebar {
   width: 200px;
   background: #f4f4f4;
-  padding: 8px;
-  transition: width 0.3s ease;
-  overflow: hidden;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -202,6 +202,7 @@
 
 .sidebar.collapsed {
   width: 60px;
+  span { display: none; }
 }
 
 .collapse-btn {
@@ -215,7 +216,7 @@
   justify-content: center;
   border-radius: 4px;
   cursor: pointer;
-  margin: 8px auto 12px;
+  margin: 12px auto;
   transition: margin-right 4s ease-in-out;
 }
 
@@ -238,15 +239,13 @@
   margin: 0;
 }
 
-
 .main-content {
   padding: 0;
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
   justify-content: flex-start;
-  overflow-y: auto;
 }
 
 @media (max-width: 768px) {
@@ -254,10 +253,11 @@
   .sidebar span { display: none; }
 }
 
-body, html {
+html, body, #root {
   margin: 0;
   padding: 0;
   height: 100%;
+  width: 100%;
 }
 
 #root {
