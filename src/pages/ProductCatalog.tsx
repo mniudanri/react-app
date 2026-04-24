@@ -1,7 +1,11 @@
 import { products } from "../data/products";
 import { ProductCard } from "../components/ProductCard";
+import { ProductModal } from "../components/ProductModal";
+import { useState } from "react";
 
 export function ProductCatalog() {
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+
   return (
     <div
       style={{
@@ -12,8 +16,17 @@ export function ProductCatalog() {
       }}
     >
       {products.map((p) => (
-        <ProductCard key={p.id} product={p} />
+        <div key={p.id} onClick={() => setSelectedProduct(p)}>
+          <ProductCard product={p} />
+        </div>
       ))}
+
+      {selectedProduct && (
+        <ProductModal
+          product={selectedProduct}
+          onClose={() => setSelectedProduct(null)}
+        />
+      )}
     </div>
   );
 }
