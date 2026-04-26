@@ -15,13 +15,20 @@ export default function PromoCarousel() {
 
   return (
     <div className="promo-carousel">
-      <button onClick={prev} className="nav-btn">❮</button>
-      <div className="promo-card">
-        <img src={promos[index].image} alt={promos[index].title} />
-        <h2>{promos[index].title}</h2>
-        <p>{promos[index].text}</p>
-      </div>
-      <button onClick={next} className="nav-btn">❯</button>
+        <div
+            className="promo-track"
+            style={{ transform: `translateX(-${index * 100}%)` }}
+        >
+            {promos.map((promo) => (
+            <div key={promo.id} className="promo-card">
+                <img src={promo.image} alt={promo.title} />
+                <h2>{promo.title}</h2>
+                <p>{promo.text}</p>
+            </div>
+            ))}
+        </div>
+        <button onClick={prev} className="nav-btn">❮</button>
+        <button onClick={next} className="nav-btn">❯</button>
     </div>
   );
 }
