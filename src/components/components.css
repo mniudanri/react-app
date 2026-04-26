@@ -111,6 +111,45 @@
   background-color: #0056b3;
 }
 
+.promo-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: #fafafa;
+  padding: 20px;
+}
+
+.promo-card {
+  background: #ffeeba;
+  padding: 16px;
+  border-radius: 8px;
+  width: 400px;
+  text-align: center;
+  transition: transform 0.5s ease-in-out;
+}
+
+.promo-card img {
+  max-width: 100%;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.nav-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.nav-btn:hover {
+  background: #0056b3;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
