@@ -1,7 +1,4 @@
 import type { Product } from "../models/Product";
-import mouseImg from "../assets/mouse.png";
-import runningShoesImg from "../assets/running-shoes.png";
-import mugImg from "../assets/mug.png";
 
 export const products: Product[] = [
   {
@@ -12,7 +9,7 @@ export const products: Product[] = [
       "An ergonomic wireless mouse designed for comfort during long work sessions. Features 2.4GHz connectivity, adjustable DPI settings, and a battery life that lasts up to 12 months. Perfect for both office and gaming use.",
     price: 25.99,
     category: "Electronics",
-    image: mouseImg
+    image: "/products/mouse.png"
   },
   {
     id: 2,
@@ -22,7 +19,7 @@ export const products: Product[] = [
       "Lightweight running shoes with breathable mesh fabric and cushioned soles. Designed to provide maximum support and flexibility for daily jogs or marathon training. Available in multiple colors and sizes.",
     price: 59.99,
     category: "Sportswear",
-    image: runningShoesImg
+    image: "/products/running-shoes.png"
   },
   {
     id: 3,
@@ -32,6 +29,6 @@ export const products: Product[] = [
       "A durable ceramic mug with a 350ml capacity, ideal for coffee, tea, or hot chocolate. Dishwasher and microwave safe, with a sleek matte finish that adds style to your kitchenware collection.",
     price: 9.99,
     category: "Kitchenware",
-    image: mugImg
+    image: "/products/mug.png"
   }
 ];
