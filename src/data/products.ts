@@ -18,7 +18,7 @@ export const products: Product[] = [
     description:
       "Lightweight running shoes with breathable mesh fabric and cushioned soles. Designed to provide maximum support and flexibility for daily jogs or marathon training. Available in multiple colors and sizes.",
     price: 59.99,
-    category: "Sportswear",
+    category: "Sports",
     image: "/products/running-shoes.png"
   },
   {
