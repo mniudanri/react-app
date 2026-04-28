@@ -4,6 +4,7 @@ import {
   Route,
   Link,
   useLocation,
+  NavLink,
 } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { ProductCatalog } from "./pages/ProductCatalog";
@@ -91,9 +92,14 @@ function Layout() {
 
                   return (
                     <li key={cat}>
-                      <Link to={path} className="subcategory-link">
+                      <NavLink
+                        to={path}
+                        className={({ isActive }) =>
+                          `subcategory-link ${isActive ? "active" : ""}`
+                        }
+                      >
                         <span className="menu-text">{cat}</span>
-                      </Link>
+                      </NavLink>
                     </li>
                   );
                 })}
