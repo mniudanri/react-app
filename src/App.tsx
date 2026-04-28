@@ -15,6 +15,7 @@ import {
   FaBoxOpen,
   FaChevronLeft,
   FaChevronRight,
+  FaLayerGroup,
 } from "react-icons/fa";
 import "./App.css";
 
@@ -39,7 +40,7 @@ function Layout() {
           onClick={() => setCollapsed(!collapsed)}
           className="collapse-btn"
         >
-          {collapsed ? <FaChevronRight /> : <FaChevronLeft />}
+          {collapsed ? <FaChevronRight /> : <FaChevronLeft style={{alignItems: 'flex-start', flexDirection: 'column'}} />}
         </button>
 
         <ul>
@@ -75,7 +76,7 @@ function Layout() {
               className="menu-item"
               onClick={() => setShowCategories(!showCategories)}
             >
-              <FaBoxOpen />
+              <FaLayerGroup  />
               <span className="menu-text">Categories</span>
               <span style={{ marginLeft: "auto" }}>
                 {showCategories ? "▼" : "▶"}
