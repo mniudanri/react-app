@@ -4,6 +4,8 @@ import {
   Route,
   Link,
   useLocation,
+  useNavigate,
+  useSearchParams,
   NavLink,
 } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -11,6 +13,7 @@ import { ProductCatalog } from "./pages/ProductCatalog";
 import { CategorizedProductCatalog } from "./pages/CategorizedProductCatalog";
 import { categories } from "./data/categories";
 import { Home } from "./pages/Home";
+import { SearchPage } from "./pages/SearchPage"
 import {
   FaHome,
   FaBoxOpen,
@@ -26,10 +29,22 @@ function Layout() {
   const [showCategories, setShowCategories] = useState(false);
   const location = useLocation();
 
+  // search state and navigation
+  const [keyword, setKeyword] = useState("");
+  const navigate = useNavigate();
+
+  const [searchParams] = useSearchParams();
+  const searchKeyword = searchParams.get("q") || "";
+
   // auto expand when on category page
   useEffect(() => {
     if (location.pathname.startsWith("/category")) {
       setShowCategories(true);
+    }
+
+    // clear search textbox everytime do another action
+    if (searchKeyword) {
+      setKeyword("");
     }
   }, [location.pathname]);
 
@@ -111,10 +126,36 @@ function Layout() {
 
       {/* routing main */}
       <main className="main-content">
+        <div className="page-header">
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+
+              if (!keyword.trim()) return;
+
+              navigate(`/search?q=${encodeURIComponent(keyword)}`);
+            }}
+            style={{ marginBottom: "16px" }}
+          >
+            <input
+              type="text"
+              placeholder="Search products..."
+              value={keyword}
+              onChange={(e) => setKeyword(e.target.value)}
+              style={{
+                width: "100%",
+                padding: "10px",
+                borderRadius: "6px",
+                border: "1px solid #ccc",
+              }}
+            />
+          </form>
+        </div>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/catalog" element={<ProductCatalog />} />
           <Route path="/category/:name" element={<CategorizedProductCatalog />} />
+          <Route path="/search" element={<SearchPage />} />
         </Routes>
       </main>
     </div>
